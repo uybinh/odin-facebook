@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OdinFacebook</title>
+    <title></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,26 @@
   </head>
 
   <body>
-    <%= yield %>
+    <!-- Navbar -->
+    <%= render "shared/navbar" %>
+
+    <main role="main">
+      <!-- Flash messages -->
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
+
+      <div class="container-fluid">
+        <%= yield %>
+      </div>
+
+    </main>
+    <!-- Footer -->
+    <%= render "shared/footer" %>
+
+    <!-- Debug info in development -->
+    <div class="container-fluid">
+      <%= debug(params) if Rails.env.development? %>
+    </div>
   </body>
 </html>
