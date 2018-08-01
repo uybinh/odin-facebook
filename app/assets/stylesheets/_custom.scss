@@ -8,17 +8,20 @@
   .content {
     display: flex;
     width: 100%;
-    height: 3rem;
+    padding: .5rem 0;
     align-items: center;
     justify-content: space-between;
     color: white;
 
-    span:first-child {
+    & > span:first-child {
       flex-grow: 1;
     }
 
-    .user_status{
+    .user-status {
       flex-grow: 0;
+      span {
+        margin-right: 1rem;
+      }
     }
   }
 }

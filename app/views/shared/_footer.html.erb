@@ -4,7 +4,12 @@
       <span><%= Time.zone.now.year %> © MyBook App </span>
       <% if signed_in? %>
         <span class="user-status">
-          Signed in with <strong><%= current_user.email %></strong>
+          <span>
+            Signed in with <strong><%= current_user.email %></strong>
+          </span>
+          <span>
+            <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-secondary btn-sm", method: :delete, data: {confirm: "Do you want to sign out?"} %>
+          </span>
         </span>
       <% end %>
     </div>
