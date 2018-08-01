@@ -1,10 +1,12 @@
 <footer class="footer bg-dark">
   <div class="container-fluid">
-    <span><%= Time.zone.now.year %> © MyBook App </span>
-    <% if signed_in? %>
-    <span class="user-status">
-      Signed in as <strong><%= current_user.name %></strong>
-    </span>
-    <% end %>
+    <div class="content">
+      <span><%= Time.zone.now.year %> © MyBook App </span>
+      <% if signed_in? %>
+        <span class="user-status">
+          Signed in with <strong><%= current_user.email %></strong>
+        </span>
+      <% end %>
+    </div>
   </div>
 </footer>
