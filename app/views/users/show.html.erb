@@ -7,13 +7,22 @@
 <section>
   <h3>All friends</h3>
   <ul>
-    <%= render @friends %>
+    <% @friends.each do |friend| %>
+      <li>
+        <%= friend.email %>
+        <span><%= link_to "Unfriend", un_friend_request_path(friend.sent_requests.find_by(requested: current_user.id)), method: :patch %></span>
+      </li>
+    <% end %>
+
+
   </ul>
 </section>
 
 <section>
   <h3>Friends requests</h3>
+  <% unless @friend_requests.empty? %>
   <ul>
     <%= render @friend_requests %>
   </ul>
+  <% end %>
 </section>
