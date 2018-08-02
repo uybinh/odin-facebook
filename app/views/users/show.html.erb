@@ -1,0 +1,19 @@
+
+<section>
+  <h2>User info</h2>
+  <%= @user.email %>
+</section>
+
+<section>
+  <h3>All friends</h3>
+  <ul>
+    <%= render @friends %>
+  </ul>
+</section>
+
+<section>
+  <h3>Friends requests</h3>
+  <ul>
+    <%= render @requesters %>
+  </ul>
+</section>

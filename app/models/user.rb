@@ -5,12 +5,17 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :received_requests,  class_name: "FriendRequest",
-                            foreign_key: "requested_id",
-                            dependent: :destroy
+                                foreign_key: "requested_id",
+                                dependent: :destroy
 
-  has_many :sent_requests,  class_name: "FriendRequest",
-                            foreign_key: "requester_id",
-                            dependent: :destroy
+  has_many :pending_requests,   -> { where(accepted: false)},
+                                class_name: "FriendRequest",
+                                foreign_key: "requested_id",
+                                dependent: :destroy
+
+  has_many :sent_requests,      class_name: "FriendRequest",
+                                foreign_key: "requester_id",
+                                dependent: :destroy
 
   has_many :requesters,     through: :received_requests,
                             source: :requester
