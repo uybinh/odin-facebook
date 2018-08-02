@@ -12,24 +12,24 @@ class User < ApplicationRecord
                             foreign_key: "requester_id",
                             dependent: :destroy
 
-  has_many :requesters, through: :received_requests,
-                        source: :requester
-  has_many :requesting, through: :sent_requests,
-                        source: :requested
+  has_many :requesters,     through: :received_requests,
+                            source: :requester
+  has_many :requesting,     through: :sent_requests,
+                            source: :requested
 
 
-  has_many :friendships, -> { where(accepted: true)},
-                            class_name: "FriendRequest",
-                            foreign_key: "requested_id",
-                            dependent: :destroy
+  has_many :friendships,          -> { where(accepted: true)},
+                                  class_name: "FriendRequest",
+                                  foreign_key: "requested_id",
+                                  dependent: :destroy
 
   has_many :reversed_friendships, -> { where(accepted: true)},
                                   class_name: "FriendRequest",
                                   foreign_key: "requester_id",
                                   dependent: :destroy
 
-  has_many :friends,  through: :friendships,
-                      source: :requester
+  has_many :friends,          through: :friendships,
+                              source: :requester
   has_many :reversed_friends, through: :reversed_friendships,
                               source: :requested
 
