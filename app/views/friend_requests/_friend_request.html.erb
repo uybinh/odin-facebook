@@ -1,0 +1,5 @@
+<li>
+  <%= friend_request.requester.email %>
+  <span>Delete</span>
+  <span><%= link_to "Accept", friend_request_path(friend_request), method: :patch %></span>
+</li>

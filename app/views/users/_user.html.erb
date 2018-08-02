@@ -1,5 +1,4 @@
 <li>
   <%= user.email %>
-  <span>Delete</span>
-  <span>Accept</span>
+  <span><%= link_to "Unfriend", un_friend_request_path(user.sent_requests.find_by(requested: current_user)), method: :patch %></span>
 </li>

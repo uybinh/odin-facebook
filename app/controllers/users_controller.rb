@@ -6,6 +6,6 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @friends = @user.all_friends
-    @requesters = @user.pending_requests.map { |request| request.requester }
+    @friend_requests = @user.pending_requests
   end
 end
