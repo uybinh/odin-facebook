@@ -6,7 +6,7 @@ class Timeline
   end
 
   def posts
-    @user.posts
+    @user.posts.includes(:author)
   end
 
   def friends

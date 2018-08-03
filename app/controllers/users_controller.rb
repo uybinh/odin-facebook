@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @friends = @user.friends
-    @friend_requests = @user.received_requests.pending
+    @friend_requests = @user.pending_requests
   end
 
   def friends
