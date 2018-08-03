@@ -1,9 +1,9 @@
-// Debug dump style
+/* Debug dump style */
 .debug_dump {
   margin: 1rem 0;
 }
 
-// Footer style
+/* Footer */
 .footer {
   .content {
     display: flex;
@@ -23,5 +23,12 @@
         margin-right: 1rem;
       }
     }
+  }
+}
+
+/* Post style */
+.post-meta {
+  & > div {
+    display: inline-block;
   }
 }

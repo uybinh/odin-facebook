@@ -6,14 +6,8 @@ class FriendRequestTest < ActiveSupport::TestCase
     @xuan = users(:xuan)
   end
 
-  test "can add friends and reverse friends" do
-    @binh.befriend(@xuan)
-    assert @xuan.isfriend(@binh)
-  end
-
-  test "can destroy friend and reverse" do
-    @binh.befriend(@xuan)
-    @xuan.unfriend(@binh)
-    assert_not @binh.isfriend(@xuan)
+  test "send friend request" do
+    @xuan.friend_request(@binh)
+    assert @binh.requesters.include? @xuan
   end
 end

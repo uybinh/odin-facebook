@@ -1,0 +1,15 @@
+<container class="row">
+
+  <aside class="col-12 col-md-3">
+    <h1><%= @timeline.user.email %></h1>
+  </aside>
+
+  <main class="col-12 col-md-9">
+    <%= form_for @timeline.posts.build do |f| %>
+      <%= f.text_area :content, placeholder: "Enter post's  content" %>
+      <%= f.submit "New post" %>
+    <% end %>
+    <%= render @timeline.posts.reload %>
+  </main>
+
+</container>

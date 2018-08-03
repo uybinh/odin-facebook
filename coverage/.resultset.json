@@ -1,6 +1,54 @@
 {
   "MiniTest": {
     "coverage": {
+      "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/models/post.rb": [
         1,
         1,
@@ -35,11 +83,11 @@
         null,
         null
       ],
-      "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/controllers/singlepages_controller.rb": [
+      "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/controllers/timelines_controller.rb": [
         1,
         null,
         1,
-        null,
+        2,
         null,
         null,
         null
@@ -59,12 +107,12 @@
         1,
         null
       ],
+      "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/helpers/posts_helper.rb": [
+        1,
+        null
+      ],
       "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/helpers/sessions_helper.rb": [
         1,
-        null,
-        1,
-        0,
-        null,
         null,
         null
       ],
@@ -72,55 +120,32 @@
         1,
         null
       ],
+      "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/helpers/timelines_helper.rb": [
+        1,
+        null
+      ],
       "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/helpers/users_helper.rb": [
         1,
         null
       ],
+      "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/facades/timeline.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
       "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/mailers/application_mailer.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/models/application_record.rb": [
-        0,
-        0,
-        0
-      ],
-      "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/models/user.rb": [
-        0,
-        null,
-        null,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        null,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
         0,
         0,
         0,
@@ -150,14 +175,59 @@
         0,
         0
       ],
+      "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/controllers/singlepages_controller.rb": [
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        0
+      ],
       "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/controllers/users_controller.rb": [
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/controllers/posts_controller.rb": [
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
         0,
         null,
         0,
+        null,
         0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
         0,
         0,
         0,
@@ -176,6 +246,6 @@
         0
       ]
     },
-    "timestamp": 1533267818
+    "timestamp": 1533281977
   }
 }
