@@ -22,7 +22,8 @@ class User < ApplicationRecord
                             source: :requester
   has_many :requesting,     through: :sent_requests,
                             source: :requested
-  has_many :friendships
+
+  has_many :friendships, dependent: :destroy
 
   has_many :friends, through: :friendships
 

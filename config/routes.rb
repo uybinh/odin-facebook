@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :friend_requests, only: [:update, :destroy]
   get :timeline, to: "timelines#show"
   resources :posts, except: :new
+  resources :comments, except: :new
 end

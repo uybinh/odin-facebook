@@ -1,0 +1,13 @@
+
+<div class="comment post-comment" data-id="<%= comment.id %>">
+  <main>
+    <%= comment.content %>
+  </main>
+  <aside>
+    <div class="meta-settings">
+      <span><%= link_to "View", comment_path(comment) %></span>
+      <span><%= link_to "Edit", edit_comment_path(comment) %></span>
+      <span><%= link_to "Delete", comment_path(comment), method: :delete, data: { confirm: "You sure?" } %></span>
+    </div>
+  </aside>
+</div>
