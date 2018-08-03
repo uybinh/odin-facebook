@@ -21,8 +21,15 @@ class User < ApplicationRecord
 
   has_many :friends, through: :friendships
 
+  def befriend(friend)
+    friends << friend
+  end
+
   def unfriend(friend)
     friendships.find_by(friend: friend).destroy
   end
 
+  def isfriend(friend)
+    friends.include?(friend)
+  end
 end
