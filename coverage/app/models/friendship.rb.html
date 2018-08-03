@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="../.."/>
+    <script src="assets/jquery-3.2.1.min.js"></script>
+    <script src="https://use.fontawesome.com/81e98abb93.js"></script>
+    <link rel="stylesheet" href="assets/deep_cover.css" type="text/css"/>
+  </head>
+  <body class="source">
+    <div class="overlay">
+      <div class="center">
+        <div class="stats"><table><tr><th class="node">Nodes</th><th class="per_char">Chars</th><th class="branch">Branches</th></tr><tr><td class="node"><span class="executed" title="executed">57</span>  / <span class="potentially_executable" title="potentially_executable">57</span></td><td class="per_char"><span class="executed" title="executed">410</span>  / <span class="potentially_executable" title="potentially_executable">410</span></td><td class="branch"><span class="executed" title="executed">1</span>  / <span class="potentially_executable" title="potentially_executable">1</span></td></tr></table></div>
+      </div>
+    </div>
+    <header>
+      <div class="content">
+        <div class="info"><span class="deep-cover"><span class="deep">Deep</span>Cover</span>
+          <span class="version">v0.6.2</span>
+        </div>
+        <div class="nav">
+          <a href="index.html" aria-label="Home"><i class="fa fa-home" aria-hidden="true"></i></a>
+          <span class="path">app/models/friendship.rb<span>
+        </div>
+      </div>
+    </header>
+    <main class="source"><table class="source"><tr><td id="L1" class="nb">1</td><td><span class="node-class kind-keyword run" title="1x">class</span> <span class="node-const kind-name run" title="1x">Friendship</span> &lt; <span class="node-const kind-name run" title="1x">ApplicationRecord</span></td></tr><tr><td id="L2" class="nb">2</td><td>  <span class="node-send kind-selector_begin run" title="1x">after_create</span> <span class="node-sym kind-expression run" title="1x">:create_reverse_friendship</span></td></tr><tr><td id="L3" class="nb">3</td><td>  <span class="node-send kind-selector_begin run" title="1x">after_destroy</span> <span class="node-sym kind-expression run" title="1x">:destroy_reverse_friendship</span></td></tr><tr><td id="L4" class="nb">4</td><td>  <span class="node-send kind-selector_begin run" title="1x">belongs_to</span> <span class="node-sym kind-expression run" title="1x">:user</span></td></tr><tr><td id="L5" class="nb">5</td><td>  <span class="node-send kind-selector_begin run" title="1x">belongs_to</span> <span class="node-sym kind-expression run" title="1x">:friend</span>, <span class="node-sym kind-expression run" title="1x">class_name</span><span class="node-pair kind-operator run" title="1x">:</span> <span class="node-str kind-expression run" title="1x">"User"</span></td></tr><tr><td id="L6" class="nb">6</td><td>  <span class="node-send kind-selector_begin run" title="1x">validates</span> <span class="node-sym kind-expression run" title="1x">:user</span>,   <span class="node-sym kind-expression run" title="1x">presence</span><span class="node-pair kind-operator run" title="1x">:</span> <span class="node-true kind-expression run" title="1x">true</span></td></tr><tr><td id="L7" class="nb">7</td><td>  <span class="node-send kind-selector_begin run" title="1x">validates</span> <span class="node-sym kind-expression run" title="1x">:friend</span>, <span class="node-sym kind-expression run" title="1x">presence</span><span class="node-pair kind-operator run" title="1x">:</span> <span class="node-true kind-expression run" title="1x">true</span>, <span class="node-sym kind-expression run" title="1x">uniqueness</span><span class="node-pair kind-operator run" title="1x">:</span> <span class="node-hash kind-begin run" title="1x">{</span> <span class="node-sym kind-expression run" title="1x">scope</span><span class="node-pair kind-operator run" title="1x">:</span> <span class="node-sym kind-expression run" title="1x">:user</span> <span class="node-hash kind-end run" title="1x">}</span></td></tr><tr><td id="L8" class="nb">8</td><td></td></tr><tr><td id="L9" class="nb">9</td><td>  <span class="node-def kind-keyword run" title="1x">def</span> <span class="node-def kind-name run" title="1x">create_reverse_friendship</span></td></tr><tr><td id="L10" class="nb">10</td><td>    <span class="node-send kind-selector_begin run" title="4x">friend</span><span class="node-send kind-dot run" title="4x">.</span><span class="node-send kind-selector_begin run" title="4x">friendships</span><span class="node-send kind-dot run" title="4x">.</span><span class="node-send kind-selector_begin run" title="4x">create</span>(<span class="node-sym kind-expression run" title="4x">friend</span><span class="node-pair kind-operator run" title="4x">:</span> <span class="node-send kind-selector_begin run" title="4x">user</span>)</td></tr><tr><td id="L11" class="nb">11</td><td>  end</td></tr><tr><td id="L12" class="nb">12</td><td></td></tr><tr><td id="L13" class="nb">13</td><td>  <span class="node-def kind-keyword run" title="1x">def</span> <span class="node-def kind-name run" title="1x">destroy_reverse_friendship</span></td></tr><tr><td id="L14" class="nb">14</td><td>    <span class="node-lvasgn kind-name run" title="2x">friendship</span> <span class="node-lvasgn kind-operator run" title="2x">=</span> <span class="node-send kind-selector_begin run" title="2x">friend</span><span class="node-send kind-dot run" title="2x">.</span><span class="node-send kind-selector_begin run" title="2x">friendships</span><span class="node-send kind-dot run" title="2x">.</span><span class="node-send kind-selector_begin run" title="2x">find_by</span>(<span class="node-sym kind-expression run" title="2x">friend</span><span class="node-pair kind-operator run" title="2x">:</span> <span class="node-send kind-selector_begin run" title="2x">user</span>)</td></tr><tr><td id="L15" class="nb">15</td><td>    <span class="fork fork-whole fork-run " data-fork-id="0"><i class="fork-icon fa fa-code-fork" aria-hidden="true" title="2x"></i><span class="fork fork-branch fork-run " data-fork-id="0"><i class="fork-icon fa fa-code-fork" aria-hidden="true" title="1x"></i><span class="node-lvar kind-name run" title="1x">friendship</span><span class="node-send kind-dot run" title="1x">.</span><span class="node-send kind-selector_begin run" title="1x">destroy</span></span> <span class="node-if kind-keyword run" title="2x">if</span> <span class="node-lvar kind-name run" title="2x">friendship</span></span></td></tr><tr><td id="L16" class="nb">16</td><td>  end</td></tr><tr><td id="L17" class="nb">17</td><td>end</td></tr></table></main>
+    <script>
+      $(function() {
+        $('.stats .branch').click(function() {
+          $('body').toggleClass('show-forks')
+        });
+      });
+    </script>
+  </body>
+</html>
