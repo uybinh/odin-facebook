@@ -6,6 +6,12 @@ User.create!(
   password_confirmation: "password"
 )
 
+User.create!(
+  email: "xuan@gmail.com",
+  password: "password",
+  password_confirmation: "password"
+)
+
 20.times do |n|
   User.create!(
     email: Faker::Internet.email,
