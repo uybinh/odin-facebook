@@ -1,12 +1,12 @@
 require 'faker'
 
-User.create(
+binh = User.create(
   email: "binh@gmail.com",
   password: "password",
   password_confirmation: "password"
 )
 
-User.create(
+xuan = User.create(
   email: "xuan@gmail.com",
   password: "password",
   password_confirmation: "password"
@@ -20,4 +20,10 @@ User.create(
   )
 end
 
-10.times { Post.create!(content: Faker::Lorem.paragraph(2, true, 4) ) }
+5.times do
+  Post.create!(content: Faker::Lorem.paragraph(2, true, 4), author: binh)
+end
+
+5.times do
+  Post.create!(content: Faker::Lorem.paragraph(2, true, 4), author: xuan)
+end
