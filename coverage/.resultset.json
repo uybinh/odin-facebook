@@ -28,19 +28,19 @@
         1,
         null,
         1,
-        1,
+        0,
         null,
         null,
         1,
-        2,
+        0,
         null,
         null,
         1,
-        1,
+        0,
         null,
         null,
         1,
-        2,
+        0,
         null,
         null
       ],
@@ -74,12 +74,12 @@
         1,
         null,
         1,
-        4,
+        0,
         null,
         null,
         1,
-        2,
-        2,
+        0,
+        0,
         null,
         null
       ],
@@ -87,7 +87,7 @@
         1,
         null,
         1,
-        2,
+        1,
         null,
         null,
         null
@@ -104,6 +104,10 @@
         null
       ],
       "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/helpers/friend_requests_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/helpers/friendships_helper.rb": [
         1,
         null
       ],
@@ -133,11 +137,11 @@
         1,
         null,
         1,
-        2,
+        1,
         null,
         null,
         1,
-        4,
+        0,
         null,
         null,
         1,
@@ -184,6 +188,11 @@
         null,
         0
       ],
+      "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/controllers/friendships_controller.rb": [
+        0,
+        null,
+        0
+      ],
       "/Users/uybinh/Dropbox/programming/learning/the_odin_project/projects/odin-facebook/app/controllers/users_controller.rb": [
         0,
         0,
@@ -192,6 +201,10 @@
         null,
         0,
         0,
+        0,
+        0,
+        0,
+        null,
         0,
         0,
         0,
@@ -208,6 +221,7 @@
         0,
         0,
         0,
+        null,
         0,
         0,
         0,
@@ -246,6 +260,6 @@
         0
       ]
     },
-    "timestamp": 1533281977
+    "timestamp": 1533285129
   }
 }

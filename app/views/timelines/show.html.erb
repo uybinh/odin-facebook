@@ -2,6 +2,12 @@
 
   <aside class="col-12 col-md-3">
     <h1><%= @timeline.user.email %></h1>
+    <div class="counter">
+      <%= link_to friends_user_path(@timeline.user) do %>
+      <span>Friends: </span>
+      <span><%= @timeline.friends.count %></span>
+      <% end %>
+    </div>
   </aside>
 
   <main class="col-12 col-md-9">

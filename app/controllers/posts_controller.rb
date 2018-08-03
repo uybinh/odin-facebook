@@ -8,7 +8,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path
     else
-      render "singlepages/home"
+      # Change this to suitable view
+      redirect_to root_path
     end
   end
 
@@ -23,7 +24,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to request.referer
+    redirect_to root_path
   end
 
   private

@@ -8,4 +8,8 @@ class UsersController < ApplicationController
     @friends = @user.friends
     @friend_requests = @user.received_requests.pending
   end
+
+  def friends
+    @friends = User.find(params[:id]).friends
+  end
 end
