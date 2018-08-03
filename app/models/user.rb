@@ -21,6 +21,8 @@ class User < ApplicationRecord
 
   has_many :friends, through: :friendships
 
+  has_many :posts, foreign_key: "author_id"
+
   def befriend(friend)
     friends << friend
   end
