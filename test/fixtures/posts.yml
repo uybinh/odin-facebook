@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: <%= Faker::Lorem.paragraph(2, true, 4) %>
+
+two:
+  content: <%= Faker::Lorem.paragraph(2, true, 4) %>
