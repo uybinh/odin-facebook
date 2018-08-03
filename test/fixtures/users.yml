@@ -1,12 +1,13 @@
-binh:
-  email: binh@gmail.com
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
 <% 10.times do |n| %>
-user-<%= n %>:
+user-<%= n + 1 %>:
   email: <%= Faker::Internet.email %>
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 <% end %>
+
+binh:
+  email: binh@gmail.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
 xuan:
   email: xuan@gmail.com

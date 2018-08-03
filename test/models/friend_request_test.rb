@@ -8,6 +8,12 @@ class FriendRequestTest < ActiveSupport::TestCase
 
   test "can add friends and reverse friends" do
     @binh.friends << @xuan
-    assert @xuan.all_friends.include? @binh
+    assert @xuan.friends.include? @binh
+  end
+
+  test "can destroy friend and reverse" do
+    @binh.friends << @xuan
+    @xuan.unfriend(@binh)
+    assert_not @binh.friends.include? @xuan
   end
 end
