@@ -1,7 +1,11 @@
 <article class="post">
   <main>
-    <%= post.content %>
-    <%= image_tag post.attached_image %>
+    <div class="text-content">
+      <%= post.content %>
+    </div>
+    <div class="photo-content">
+      <%= (image_tag post.image) if post.image.attached? %>
+    </div>
   </main>
 
   <aside class="post-meta">
