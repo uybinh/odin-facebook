@@ -34,3 +34,5 @@ end
   xuan.posts[n].comments.create(content: Faker::Lorem.sentence)
   xuan.posts[n].comments.create(content: Faker::Lorem.sentence)
 end
+
+binh.posts.first.image.attach(io: File.open("/Users/uybinh/Pictures/wallpaper/yosemite-2880x1800-5k-4k-wallpaper-8k-winter-snow-forest-osx-apple-3945.jpg"), filename: "mountain.jpg", content_type: "image/jpg")
