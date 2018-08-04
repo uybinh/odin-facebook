@@ -38,3 +38,17 @@
     max-width: 60%;
   }
 }
+
+/* Users page */
+.users-list {
+  & > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+}
