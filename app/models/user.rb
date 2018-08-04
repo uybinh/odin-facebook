@@ -24,6 +24,7 @@ class User < ApplicationRecord
                             source: :requested
 
   has_many :friendships, dependent: :destroy
+  delegate :befriend, :unfriend, to: :friendships
 
   has_many :friends, through: :friendships
 
@@ -33,13 +34,6 @@ class User < ApplicationRecord
     requesting << user
   end
 
-  def befriend(friend)
-    friends << friend
-  end
-
-  def unfriend(friend)
-    friendships.find_by(friend: friend).destroy
-  end
 
   def isfriend(friend)
     friends.include?(friend)

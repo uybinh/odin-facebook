@@ -2,6 +2,7 @@ class Friendship < ApplicationRecord
   after_create :create_reverse_friendship
   after_destroy :destroy_reverse_friendship
   belongs_to :user
+
   belongs_to :friend, class_name: "User"
   validates :user,   presence: true
   validates :friend, presence: true, uniqueness: { scope: :user }
@@ -14,4 +15,13 @@ class Friendship < ApplicationRecord
     friendship = friend.friendships.find_by(friend: user)
     friendship.destroy if friendship
   end
+
+  def self.befriend(user)
+    create(friend: user)
+  end
+
+  def self.unfriend(friend)
+    find_by(friend: friend).destroy
+  end
+
 end
