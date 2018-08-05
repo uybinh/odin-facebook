@@ -12,11 +12,7 @@
 
   <main class="col-12">
     <% if @timeline.user == current_user %>
-      <%= form_for @timeline.posts.build do |f| %>
-        <%= f.text_area :content, placeholder: "Enter post's  content" %>
-        <%= f.file_field :image %>
-        <%= f.submit "New post" %>
-      <% end %>
+      <%= render "shared/post_form", post: @timeline.posts.build %>
     <% end %>
     <div class="posts">
       <%= render @timeline.posts.reload.with_attached_image %>
