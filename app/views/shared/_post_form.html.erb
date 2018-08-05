@@ -1,5 +1,11 @@
-<%= form_for(post) do |f| %>
-  <%= f.text_area :content, placeholder: "Enter post's  content" %>
-  <%= f.file_field :image %>
-  <%= f.submit "New post" %>
+<%= form_for(post, html: { class: "post-form" }) do |f| %>
+  <div class="form-group">
+    <%= f.text_area :content, rows: "3", placeholder: "Enter post's  content", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.file_field :image, class: "form-control-file" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "New post", class: "btn btn-primary" %>
+  </div>
 <% end %>

@@ -25,6 +25,22 @@
     }
   }
 }
+/* Timeline */
+
+.user-info {
+  margin-bottom: 20px;
+  background-color: rgb(44, 93, 201);
+  padding: 5px;
+  color: white;
+  a {
+    color: white;
+  }
+  div {
+    display: inline-block;
+    margin: 0 5px;
+
+  }
+}
 
 /* Post style */
 .post-meta {
@@ -37,6 +53,12 @@
   img {
     max-width: 100%;
   }
+}
+
+/* post form */
+
+.post-form {
+
 }
 
 /* Users page */

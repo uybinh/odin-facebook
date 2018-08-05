@@ -1,19 +1,24 @@
+<aside class="user-info">
+  <div>
+    <%= @timeline.user.email %>
+  </div>
+  <div class="counter">
+    <%= link_to friends_user_path(@timeline.user) do %>
+    <span>Friends: </span>
+    <span><%= @timeline.friends.count %></span>
+    <% end %>
+  </div>
+</aside>
+
 <container class="row mx-auto timeline">
 
-  <aside class="col-12">
-    <h1><%= @timeline.user.email %></h1>
-    <div class="counter">
-      <%= link_to friends_user_path(@timeline.user) do %>
-      <span>Friends: </span>
-      <span><%= @timeline.friends.count %></span>
-      <% end %>
-    </div>
-  </aside>
-
-  <main class="col-12">
+  <div class="col-12">
     <% if @timeline.user == current_user %>
       <%= render "shared/post_form", post: @timeline.posts.build %>
     <% end %>
+  </div>
+
+  <main class="col-12">
     <div class="posts">
       <%= render @timeline.posts.reload.with_attached_image %>
     </div>
