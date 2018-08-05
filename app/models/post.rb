@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   # scope :includes_images, -> { eader_load(image_attachment: :blob)}
   # scope :includes_images, -> { preload(image_attachment: :blob)}
 
+  scope :with_author, -> { includes(:author)}
   validates :content, presence: true
 
   belongs_to :author, class_name: "User"

@@ -38,4 +38,8 @@ class User < ApplicationRecord
   def pending_requests
     received_requests.pending
   end
+
+  def posts_with_author
+    posts.with_author
+  end
 end
