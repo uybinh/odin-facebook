@@ -1,7 +1,7 @@
 class TimelinesController < ApplicationController
 
   def show
-    @timeline = Timeline.new(current_user)
+    @timeline = params[:id] ? Timeline.new(User.find(params[:id])) : Timeline.new(current_user)
   end
 
 end

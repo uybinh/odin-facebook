@@ -16,7 +16,7 @@
       <%= f.file_field :image %>
       <%= f.submit "New post" %>
     <% end %>
-    <%= render @timeline.posts.reload %>
+    <%= render @timeline.posts.reload.with_attached_image %>
   </main>
 
 </container>
