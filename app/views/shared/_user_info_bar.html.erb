@@ -1,0 +1,11 @@
+<aside class="user-info">
+  <div>
+    <%= user.email %>
+  </div>
+  <div class="counter">
+    <%= link_to user_path(user) do %>
+    <span>Friends: </span>
+    <span><%= user.friends.count %></span>
+    <% end %>
+  </div>
+</aside>

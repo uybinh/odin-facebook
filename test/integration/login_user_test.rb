@@ -10,6 +10,6 @@ class LoginUserTest < ActionDispatch::IntegrationTest
                                               remember_me: 0
                                               }}
     follow_redirect!
-    assert_template "timelines/show"
+    assert_template "singlepages/home"
   end
 end

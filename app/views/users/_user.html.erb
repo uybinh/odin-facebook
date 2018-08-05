@@ -1,6 +1,6 @@
 <li>
   <%= user.email %>
-  <span><%= link_to "View", timeline_user_path(user) %></span>
+  <span><%= link_to "View", user_path(user) %></span>
   <% if current_user.requesting.include?(user) %>
     <%= render "users/unadd_friend_text", user: user %>
   <% else %>

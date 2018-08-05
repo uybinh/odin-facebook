@@ -1,0 +1,17 @@
+<%= render "shared/user_info_bar", user: @user %>
+
+<container class="row mx-auto timeline">
+
+  <div class="col-12">
+    <% if @user == current_user %>
+      <%= render "shared/post_form", post: @user.posts.build %>
+    <% end %>
+  </div>
+
+  <main class="col-12">
+    <div class="posts">
+      <%= render @user.posts.reload.with_attached_image %>
+    </div>
+  </main>
+
+</container>
