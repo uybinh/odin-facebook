@@ -1,6 +1,6 @@
-<container class="row">
+<container class="row mx-auto timeline">
 
-  <aside class="col-12 col-md-3">
+  <aside class="col-12">
     <h1><%= @timeline.user.email %></h1>
     <div class="counter">
       <%= link_to friends_user_path(@timeline.user) do %>
@@ -10,13 +10,17 @@
     </div>
   </aside>
 
-  <main class="col-12 col-md-9">
-    <%= form_for @timeline.posts.build do |f| %>
-      <%= f.text_area :content, placeholder: "Enter post's  content" %>
-      <%= f.file_field :image %>
-      <%= f.submit "New post" %>
+  <main class="col-12">
+    <% if @timeline.user == current_user %>
+      <%= form_for @timeline.posts.build do |f| %>
+        <%= f.text_area :content, placeholder: "Enter post's  content" %>
+        <%= f.file_field :image %>
+        <%= f.submit "New post" %>
+      <% end %>
     <% end %>
-    <%= render @timeline.posts.reload.with_attached_image %>
+    <div class="posts">
+      <%= render @timeline.posts.reload.with_attached_image %>
+    </div>
   </main>
 
 </container>

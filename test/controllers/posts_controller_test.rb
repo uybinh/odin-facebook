@@ -2,6 +2,11 @@ require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
 
+  def setup
+    @binh = users(:binh)
+    @xuan = users(:xuan)
+  end
+
   test "should create new post when signed in" do
     sign_in users(:binh)
     # with valid params
@@ -9,8 +14,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
       post posts_path, params: { post: {content: "hello world"}}
     end
     follow_redirect!
-    assert_template "timelines/show"
-    # with invalid prarams
+      # with invalid prarams
     assert_no_difference "Post.count" do
       post posts_path, params: { post: {content: "     "}}
     end

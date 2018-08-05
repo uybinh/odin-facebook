@@ -35,7 +35,7 @@
 
 .post main {
   img {
-    max-width: 60%;
+    max-width: 100%;
   }
 }
 
@@ -53,5 +53,23 @@
     }
     padding: 10px;
     border-bottom: 1px solid rgba(175, 175, 175, 0.2);
+  }
+}
+
+/* Timeline */
+
+.timeline {
+  max-width: 800px;
+}
+
+.posts {
+  padding: 10px 0;
+
+  article:first-child {
+    border-top: 1px solid rgba(201, 201, 201, 0.5);
+  }
+  article {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(201, 201, 201, 0.5);
   }
 }

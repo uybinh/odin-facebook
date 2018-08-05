@@ -6,8 +6,4 @@ class FriendRequestTest < ActiveSupport::TestCase
     @xuan = users(:xuan)
   end
 
-  test "send friend request" do
-    @xuan.friend_request(@binh)
-    assert @binh.requesters.include? @xuan
-  end
 end

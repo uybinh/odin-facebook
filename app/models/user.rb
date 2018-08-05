@@ -30,11 +30,6 @@ class User < ApplicationRecord
 
   has_many :posts, foreign_key: "author_id"
 
-  def friend_request(user)
-    requesting << user
-  end
-
-
   def isfriend(friend)
     friends.include?(friend)
   end
