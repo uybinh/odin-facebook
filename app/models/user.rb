@@ -8,10 +8,10 @@ class User < ApplicationRecord
                                 foreign_key: "requested_id",
                                 dependent: :destroy
 
-  has_many :pending_requests,   -> { pending },
-                                class_name: "FriendRequest",
-                                foreign_key: "requested_id",
-                                dependent: :destroy
+  # has_many :pending_requests,   -> { pending },
+  #                               class_name: "FriendRequest",
+  #                               foreign_key: "requested_id",
+  #                               dependent: :destroy
 
   has_many :sent_requests,      class_name: "FriendRequest",
                                 foreign_key: "requester_id",
@@ -30,7 +30,12 @@ class User < ApplicationRecord
 
   has_many :posts, foreign_key: "author_id"
 
+  scope :include_request, -> { includes(:requesting)}
   def isfriend(friend)
     friends.include?(friend)
+  end
+
+  def pending_requests
+    received_requests.pending
   end
 end

@@ -18,4 +18,6 @@ class FriendRequestsController < ApplicationController
     redirect_to users_path
   end
 
+
+
 end

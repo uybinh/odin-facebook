@@ -3,9 +3,15 @@
     <%= user.email %>
   </div>
   <div class="counter">
-    <%= link_to user_path(user) do %>
+    <%= link_to friends_user_path(user) do %>
     <span>Friends: </span>
     <span><%= user.friends.count %></span>
+    <% end %>
+  </div>
+  <div class="counter">
+    <%= link_to friends_user_path(user) do %>
+    <span>Friends requests: </span>
+    <span><%= user.requesters.where("friend_requests.accepted = FALSE").count %></span>
     <% end %>
   </div>
 </aside>
