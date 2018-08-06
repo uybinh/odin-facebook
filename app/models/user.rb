@@ -4,17 +4,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :received_requests,  class_name: "FriendRequest",
-                                foreign_key: "requested_id",
+  has_many :received_requests,  class_name: 'FriendRequest',
+                                foreign_key: 'requested_id',
                                 dependent: :destroy
 
   # has_many :pending_requests,   -> { pending },
-  #                               class_name: "FriendRequest",
-  #                               foreign_key: "requested_id",
+  #                               class_name: 'FriendRequest',
+  #                               foreign_key: 'requested_id',
   #                               dependent: :destroy
 
-  has_many :sent_requests,      class_name: "FriendRequest",
-                                foreign_key: "requester_id",
+  has_many :sent_requests,      class_name: 'FriendRequest',
+                                foreign_key: 'requester_id',
                                 dependent: :destroy
 
 
@@ -29,7 +29,8 @@ class User < ApplicationRecord
 
   has_many :friends, through: :friendships
 
-  has_many :posts, foreign_key: "author_id"
+  has_many :posts, foreign_key: 'author_id'
+  has_many :comments, foreign_key: 'author_id'
 
   scope :is_requested_by, -> { includes(:requesting)}
 
@@ -42,7 +43,7 @@ class User < ApplicationRecord
   end
 
   def pending_requesters
-    requesters.where("friend_requests.accepted = FALSE")
+    requesters.where('friend_requests.accepted = FALSE')
   end
 
   def is_requested_by(user)

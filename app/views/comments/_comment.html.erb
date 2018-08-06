@@ -1,5 +1,9 @@
 
 <div class="comment post-comment" data-id="<%= comment.id %>">
+  <header>
+    <span>Posted <%= time_ago_in_words(comment.created_at) %> ago</span>
+    <span>by <%= link_to comment.author_email, user_path(comment.author) %></span>
+  </header>
   <main>
     <%= comment.content %>
   </main>
