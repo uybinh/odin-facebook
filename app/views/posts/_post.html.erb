@@ -1,22 +1,32 @@
-<article class="post">
+<article class='post'>
   <main>
-    <div class="text-content">
+    <div class='text-content'>
       <%= post.content %>
     </div>
-    <div class="photo-content">
+    <div class='photo-content'>
       <%= (image_tag post.image) if post.image.attached? %>
     </div>
   </main>
 
-  <aside class="post-meta">
-    <div class="meta-author">
+  <aside class='post-meta'>
+    <div class='meta-author'>
       <%= post.author.email %>
     </div>
-    <div class="meta-settings">
+    <div class='meta-settings'>
       <span>posted <%= time_ago_in_words(post.created_at) %> ago</span>
-      <span><%= link_to "View", post_path(post) %></span>
-      <span><%= link_to "Edit", edit_post_path(post) %></span>
-      <span><%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "You sure?" } %></span>
+      <span><%= link_to 'View', post_path(post) %></span>
+      <span><%= link_to 'Edit', edit_post_path(post) %></span>
+      <span><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'You sure?' } %></span>
+      <span>
+        <%= link_to post_comments_path(post) do %>
+          Comments (<%= post.comments.count %>)
+        <% end %>
+      </span>
     </div>
   </aside>
+  <% if post.comments.count > 0 %>
+    <div class="comments">
+    <%= render post.comments %>
+    </div>
+  <% end %>
 </article>

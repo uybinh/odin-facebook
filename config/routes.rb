@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   end
   resources :friendships, only: [:create, :destroy]
   resources :friend_requests, only: [:update, :destroy]
-  resources :posts, except: :new
-  resources :comments, except: :new
+  resources :posts, except: :new do
+    resources :comments, only: :index
+  end
+  resources :comments, except: [:index, :new]
 end

@@ -1,7 +1,10 @@
 class CommentsController < ApplicationController
 
-  def create
+  def index
+    @comments = comments_of(Post.find(params[:post_id]))
+  end
 
+  def create
   end
 
   def show
@@ -16,4 +19,8 @@ class CommentsController < ApplicationController
 
   end
 
+  private
+    def comments_of(post)
+      post.comments
+    end
 end
