@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   # scope :includes_images, -> { preload(image_attachment: :blob)}
 
   default_scope { order(created_at: :desc) }
-  scope :with_author, -> { includes(:author)}
+  scope :with_author_and_comments, -> { includes(:author, comments: :author)}
   validates :content, presence: true
 
   belongs_to :author, class_name: "User"

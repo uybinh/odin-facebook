@@ -23,13 +23,16 @@ class User < ApplicationRecord
   has_many :requesting,     through: :sent_requests,
                             source: :requested
 
-  has_many :friendships, dependent: :destroy
+  has_many :friendships, -> { includes(:user) }, dependent: :destroy
+
   delegate :befriend, :unfriend, to: :friendships
   delegate :remove_friend_request, to: :received_requests
 
   has_many :friends, through: :friendships
 
   has_many :posts, foreign_key: 'author_id'
+  delegate :with_author_and_comments, to: :posts, prefix: true
+
   has_many :comments, foreign_key: 'author_id'
 
   scope :is_requested_by, -> { includes(:requesting)}
@@ -48,10 +51,6 @@ class User < ApplicationRecord
 
   def is_requested_by(user)
     requesting.include?(user)
-  end
-
-  def posts_with_author
-    posts.with_author
   end
 
 end

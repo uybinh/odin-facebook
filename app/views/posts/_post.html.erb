@@ -19,12 +19,12 @@
       <span><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'You sure?' } %></span>
       <span>
         <%= link_to post_comments_path(post) do %>
-          Comments (<%= post.comments.count %>)
+          Comments (<%= post.comments.size %>)
         <% end %>
       </span>
     </div>
   </aside>
-  <% if post.comments.count > 0 %>
+  <% if post.comments.size > 0 %>
     <div class="comments">
     <%= render post.comments %>
     </div>

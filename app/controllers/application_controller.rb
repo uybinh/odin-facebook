@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
     Current.user = current_user
   end
 
+  def current_user
+    @current_user ||= super && User.includes(:requesting, :friends).find(@current_user.id)
+  end
+
 end
