@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   # But what if you want to use eager_load or preload instead of includes
   # scope :includes_images, -> { eader_load(image_attachment: :blob)}
   # scope :includes_images, -> { preload(image_attachment: :blob)}
-
+  default_scope { order(created_at: :desc) }
   scope :with_author, -> { includes(:author)}
   validates :content, presence: true
 
