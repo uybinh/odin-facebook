@@ -1,0 +1,6 @@
+<div>
+<%= user.email %>
+<span><%= link_to "View", user_path(user) %></span>
+<span><%= link_to "Accept",  friendships_path(id: user.id), method: :post %></span>
+<span><%= link_to "Delete friend request",  unaccept_request_user_path(user), method: :delete %></span>
+</div>

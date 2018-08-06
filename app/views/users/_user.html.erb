@@ -1,9 +1,11 @@
-<li>
+<div>
   <%= user.email %>
   <span><%= link_to "View", user_path(user) %></span>
-  <%# if current_user.include_request.requesting.include?(user) %>
-    <%#= render "users/unadd_friend_text", user: user %>
-  <%# else %>
-    <%#= render "users/add_friend_text", user: user %>
-  <%# end %>
-</li>
+  <% unless current_user.isfriend(user) %>
+    <% if current_user.is_requested_by(user) %>
+      <%= render "users/unadd_friend_text", user: user %>
+    <% else %>
+      <%= render "users/add_friend_text", user: user %>
+    <% end %>
+  <% end %>
+</div>

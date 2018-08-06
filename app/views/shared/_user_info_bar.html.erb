@@ -9,9 +9,9 @@
     <% end %>
   </div>
   <div class="counter">
-    <%= link_to friends_user_path(user) do %>
+    <%= link_to requesters_user_path(user) do %>
     <span>Friends requests: </span>
-    <span><%= user.requesters.where("friend_requests.accepted = FALSE").count %></span>
+    <span><%= user.pending_requesters.count %></span>
     <% end %>
   </div>
 </aside>

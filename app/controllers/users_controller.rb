@@ -11,8 +11,8 @@ class UsersController < ApplicationController
     @friends = User.find(params[:id]).friends
   end
 
-  def friend_requests
-    @requester = User.find(params[:id]).requesters
+  def requesters
+    @requesters = User.find(params[:id]).pending_requesters
   end
 
 end

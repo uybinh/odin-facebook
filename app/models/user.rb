@@ -25,12 +25,14 @@ class User < ApplicationRecord
 
   has_many :friendships, dependent: :destroy
   delegate :befriend, :unfriend, to: :friendships
+  delegate :remove_friend_request, to: :received_requests
 
   has_many :friends, through: :friendships
 
   has_many :posts, foreign_key: "author_id"
 
-  scope :include_request, -> { includes(:requesting)}
+  scope :is_requested_by, -> { includes(:requesting)}
+
   def isfriend(friend)
     friends.include?(friend)
   end
@@ -39,7 +41,16 @@ class User < ApplicationRecord
     received_requests.pending
   end
 
+  def pending_requesters
+    requesters.where("friend_requests.accepted = FALSE")
+  end
+
+  def is_requested_by(user)
+    requesting.include?(user)
+  end
+
   def posts_with_author
     posts.with_author
   end
+
 end
