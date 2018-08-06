@@ -13,6 +13,7 @@
       <%= post.author.email %>
     </div>
     <div class="meta-settings">
+      <span>posted <%= time_ago_in_words(post.created_at) %> ago</span>
       <span><%= link_to "View", post_path(post) %></span>
       <span><%= link_to "Edit", edit_post_path(post) %></span>
       <span><%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "You sure?" } %></span>
