@@ -73,7 +73,57 @@
 
 /* comment form */
 
+@keyframes hide {
+  0% {
+    opacity: 1;
+    height: auto;
+    overflow: hidden;
+    display: none;
+  }
+
+  100% {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    display: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    display: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  100% {
+    opacity: 1;
+    height: auto;
+    overflow: hidden;
+    display: none;
+  }
+}
+
 .hidden {
+  animation-name: hide;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.show {
+  animation-name: show;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.initial-hidden {
   display: none;
 }
 

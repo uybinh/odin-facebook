@@ -24,7 +24,7 @@
   </aside>
   <!-- Comments -->
   <% if post.comments.size > 0 %>
-    <div class='comments hidden' data-post-id='<%= post.id %>'>
+    <div class='comments initial-hidden' data-post-id='<%= post.id %>'>
       <div id='post-<%= post.id %>-comments' >
         <%= render post.comments %>
       </div>
