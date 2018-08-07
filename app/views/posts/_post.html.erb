@@ -18,19 +18,17 @@
       <span><%= link_to 'Edit', edit_post_path(post) %></span>
       <span><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'You sure?' } %></span>
       <span>
-        <%= link_to post_comments_path(post) do %>
-          Comments (<%= post.comments.size %>)
-        <% end %>
+        <%= link_to 'Show comments', '#', class: 'show-comments-anchor', 'data-post-id' => post.id %>
       </span>
     </div>
   </aside>
   <!-- Comments -->
   <% if post.comments.size > 0 %>
-    <div class="comments">
-      <div id="post-<%= post.id %>-comments">
+    <div class='comments hidden' data-post-id='<%= post.id %>'>
+      <div id='post-<%= post.id %>-comments' >
         <%= render post.comments %>
       </div>
-      <%= render "comments/comment-form", post: post %>
+      <%= render 'comments/comment-form', post: post %>
     </div>
   <% end %>
 </article>
