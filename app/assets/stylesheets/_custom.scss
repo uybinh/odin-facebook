@@ -76,14 +76,21 @@
 @keyframes hide {
   0% {
     opacity: 1;
-    height: auto;
+    height: 100%;
+    line-height: 1.5;
     overflow: hidden;
     display: none;
   }
-
+  80% {
+    opacity: 0;
+    height: 100%;
+    line-height: 1.5;
+    overflow: hidden;
+  }
   100% {
     opacity: 0;
-    height: 0;
+    height: 0px;
+    line-height: 0;
     overflow: hidden;
     display: none;
     margin-top: 0;
@@ -94,16 +101,23 @@
 @keyframes show {
   0% {
     opacity: 0;
-    height: 0;
+    height: 0px;
+    line-height: 0;
     overflow: hidden;
     display: none;
     margin-top: 0;
     padding-top: 0;
   }
-
+  25% {
+    opacity: 0;
+    height: 100%;
+    line-height: 1.5;
+    overflow: hidden;
+  }
   100% {
     opacity: 1;
-    height: auto;
+    height: 100%;
+    line-height: 1.5;
     overflow: hidden;
     display: none;
   }
