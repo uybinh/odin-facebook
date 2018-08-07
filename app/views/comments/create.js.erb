@@ -1,0 +1,6 @@
+comment = "<%= escape_javascript(render('comments/comment', comment: @comment)) %>"
+
+comments = document.querySelector("#post-<%= @comment.post.id %>-comments")
+comments.innerHTML += comment
+form = document.querySelector("#post-<%= @comment.post.id %>-comments + div form")
+form.reset()

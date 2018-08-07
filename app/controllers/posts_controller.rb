@@ -13,13 +13,9 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit
+  def edit; end
 
-  end
-
-  def update
-
-  end
+  def update; end
 
   def destroy
     @post = Post.find(params[:id])

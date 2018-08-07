@@ -5,6 +5,14 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @comment = Comment.new(comment_params)
+    @comment.save
+
+    respond_to do |format|
+      format.html { redirect_to request.referer }
+      format.js
+    end
+
   end
 
   def show
@@ -22,5 +30,9 @@ class CommentsController < ApplicationController
   private
     def comments_of(post)
       post.comments
+    end
+
+    def comment_params
+      params.require(:comment).permit(:content, :author_id, :post_id)
     end
 end
