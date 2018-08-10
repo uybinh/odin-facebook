@@ -5,6 +5,9 @@
 
 /* Footer */
 .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   .content {
     display: flex;
     width: 100%;
@@ -174,4 +177,30 @@
     padding: 10px 0;
     border-bottom: 1px solid rgba(201, 201, 201, 0.5);
   }
+}
+
+/* Sign in */
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signin input[type="email"] {
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.form-wrapper {
+  height: calc(100vh - 40px - 58px);
+
 }
